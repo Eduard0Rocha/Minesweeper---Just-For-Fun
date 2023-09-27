@@ -1,0 +1,105 @@
+@charset "UTF-8";
+
+:root {
+
+    --board_size: 40vw;
+    --size_num: 10;
+    --margin_btwn_sqrs: 4px;
+}
+
+.board {
+
+    width: calc(var(--board_size) + var(--margin_btwn_sqrs)*9);
+    height: calc(var(--board_size) + var(--margin_btwn_sqrs)*9);
+    margin: 1% auto 0 auto;
+    position: relative;
+}
+
+.row {
+
+    display: flex;
+    width: calc(var(--board_size) + var(--margin_btwn_sqrs)*9);
+    height: calc(var(--board_size)/var(--size_num));
+    margin: 2px 0;
+}
+
+.square {
+
+    width: calc(calc(var(--board_size)/var(--size_num)));
+    height: calc(calc(var(--board_size)/var(--size_num)));
+
+    -webkit-user-select: none;  
+    -moz-user-select: none;    
+    -ms-user-select: none;      
+    user-select: none;
+
+    display: flex;
+
+    margin: 2px;
+
+    border-radius: 20%;
+}
+
+.square.hidden {
+
+    background-color: green;
+}
+
+.square.visible {
+
+    background-color: gainsboro;
+}
+
+#info {
+
+    text-align: center;
+}
+
+#info p {
+
+    margin-top: 30px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
+    word-spacing: 10px;
+    margin-bottom: 10px;
+}
+
+#info p i {
+
+    font-size: 25px;
+    color: brown;
+}
+
+#shovel_flag {
+
+    width: 150px;
+    height: 50px;
+    background-color: green;
+    font-size: 28px;
+    color: white;
+}
+
+.board .fa-flag {
+
+    font-size: 32px;
+    color: brown;
+    margin-top: calc((var(--board_size)/var(--size_num))/2 - 15px);
+    margin-left: calc((var(--board_size)/var(--size_num))/2 - 15px);
+}
+
+.board .fa-bomb {
+
+    font-size: 32px;
+    color: black;
+    margin-top: calc((var(--board_size)/var(--size_num))/2 - 15px);
+    margin-left: calc((var(--board_size)/var(--size_num))/2 - 15px);
+}
+
+.adj_bombs {
+
+    font-size: 35px;
+    margin-top: calc((var(--board_size)/var(--size_num))/2 - 20px);
+    margin-left: calc((var(--board_size)/var(--size_num))/2 - 10px);
+    font-weight: bold;
+}
